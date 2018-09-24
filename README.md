@@ -5,7 +5,7 @@
 
 
 ##### Deployed to Heroku at:
-[Heroku](https://git.heroku.com/whispering-peak-61226.git)
+[Heroku](https://whispering-peak-61226.herokuapp.com/)
 
 
 ### Notable technology:
