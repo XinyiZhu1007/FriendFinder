@@ -5,7 +5,7 @@
 
 
 ##### Deployed to Heroku at:
-[Heroku](https://cryptic-atoll-87312.herokuapp.com/)
+[Heroku](https://git.heroku.com/whispering-peak-61226.git)
 
 
 ### Notable technology:
