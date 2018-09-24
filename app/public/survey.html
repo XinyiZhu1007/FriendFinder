@@ -13,17 +13,17 @@
         <link rel="stylesheet" href="./public/css/style.css" />
     </head>
 
-
     <body>
         <div class="bar">
-            <div><a class="right" href="https://github.com/XinyiZhu1007/FriendFinder">Source code</a></div>
+            <div><a class="right" href="/">Home  </a></div>
+            <div><a class="right" href="https://github.com/XinyiZhu1007/FriendFinder">Source Code   </a></div>
         </div>
 
         <div class="container">
             <div class="question">
                 <h4 class="question-title">Question 1</h4>
                 <p class="question-question">You are an extrovert and are out-going.</p>
-                <select class="question-select">
+                <select class="question-select required">
                     <option value="">Choose your score</option>
                     <option value="1">1(I don't think so)</option>
                     <option value="2">2</option>
@@ -36,7 +36,7 @@
             <div class="question">
                 <h4 class="question-title">Question 2</h4>
                 <p class="question-question">You like spending free time alone.</p>
-                <select class="question-select">
+                <select class="question-select required">
                     <option value="">Choose your score</option>
                     <option value="1">1(I don't think so)</option>
                     <option value="2">2</option>
@@ -50,7 +50,7 @@
     
                 <h4 class="question-title">Question 3</h4>
                 <p class="question-question">You like to think thoroughly and rely on logic before and when taking actions.</p>
-                <select class="question-select">
+                <select class="question-select required">
                     <option value="">Choose your score</option>
                     <option value="1">1(I don't think so)</option>
                     <option value="2">2</option>
@@ -64,7 +64,7 @@
     
                 <h4 class="question-title">Question 4</h4>
                 <p class="question-question">You are organized.</p>
-                <select class="question-select">
+                <select class="question-select required">
                     <option value="">Choose your score</option>
                     <option value="1">1(I don't think so)</option>
                     <option value="2">2</option>
@@ -78,7 +78,7 @@
     
                 <h4 class="question-title">Question 5</h4>
                 <p class="question-question">You are easy to get nervous.</p>
-                <select class="question-select">
+                <select class="question-select required">
                     <option value="">Choose your score</option>
                     <option value="1">1(I don't think so)</option>
                     <option value="2">2</option>
@@ -92,7 +92,7 @@
 
                 <h4 class="question-title">Question 6</h4>
                 <p class="question-question">You like taking leadership roles and are a natural leader.</p>
-                <select class="question-select">
+                <select class="question-select required">
                     <option value="">Choose your score</option>
                     <option value="1">1(I don't think so)</option>
                     <option value="2">2</option>
@@ -103,25 +103,71 @@
             </div>
             
             
-            <button type ="submit" data-target="modal"  id="submitBtn">Submit</button>
+            <button type ="submit" id="submitBtn">Submit</button>
         
-            <div id="modal" class="modal">
+            <div class="modal">
                 <div class="modal-content">
-                    <h2>Meet Your Buddy:</h2>
-                    <p id="matchName"></p>
-                    <img id="matchPic" src="" alt="No Image" width = 300px>
+                    <div class="modal-content-holder"></div>
                 </div>
                 <div class="modal-footer">
-                    <a href="#!"><h5>Back to Home Page</h5></a>
+                    
                 </div>
-            </div>
-        
-        
-        
-        
+            </div>        
         </div>
-        
 
+        <div class="modal">
+            <div class="modal-header">
+                    <h2>Meet Your Buddy:</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-content"></div>
+                <a href="/"><h5>Back to Home Page</h5></a>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(document).on("click","#submitBtn", function(e) {
+                    e.preventDefault();
+                    
+                    function validateSelect() {
+                        var isValid = false;
+                        $('.question-select').each(function() {
+                            if ($(this).val()){
+                                isValid = true;
+                            }
+                        });
+                        return isValid;
+                    }
+                    // if everything is filled
+                    if (validateSelect() == true) {
+                        var inputAnswer = [];
+                        $('.question-select').each(function(element) {
+                            inputAnswer.push($(this).val());
+                        });
+                        console.log("inputAnswer: " + inputAnswer);
+                        //Grabs current URL of website
+                        // var currentURL = window.location.origin;
+                        //AJAX posts the data to friends API.
+                        var data = {scores: inputAnswer};
+                        $.post("/api/friends", data, function(data) {
+                            console.log("data: ");
+                            console.log(data);
+                            data.forEach(element => {
+                                var name = $("<p id='friend-name'>").text(element.name);
+                                var img = $("<img id='friend-pic' alt='No Image' width = 300px>").attr("src", element.photo);
+                                $(".modal-content").append(name);
+                                $(".modal-content").append(img);
+                            });
+                        });
+                        $('.modal').toggleClass('active');
+                    } else {
+                        alert("Please fill out ALL fields before submitting survey!")
+                    }
+                    // return false;
+                });
+            });
+            </script>
         
 
         

@@ -62,6 +62,10 @@ h5{
 
 /* survey page */
 
+.right{
+    margin-right: 1%;
+}
+
 .question{
     padding-bottom: 3%;
     text-align: center;
@@ -81,3 +85,13 @@ button{
     width: 100%;
     border: none;
 }
+
+/* modals display */
+
+/* .modal{
+    visibility:hidden;
+} */
+
+.modal.active{
+    visibility:visible;
+}  

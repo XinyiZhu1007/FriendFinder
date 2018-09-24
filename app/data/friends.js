@@ -1,7 +1,7 @@
 var friendsList = [
 	{
 		name: 'Midoriya Izuku',
-		photo: '../public/img/',
+		photo: '../public/img/holder.png',
 		scores: [
 			'4',
 			'3',
@@ -13,7 +13,7 @@ var friendsList = [
 	},
 	{
 		name: 'Bakugou Katsuki',
-		photo: '../public/img/',
+		photo: '../public/img/holder.png',
 		scores: [
 			'2',
 			'4',
@@ -25,7 +25,7 @@ var friendsList = [
 	},
 	{
 		name: 'Todoroki Shouto',
-		photo: '../public/img/',
+		photo: '../public/img/holder.png',
 		scores: [
 			'1',
 			'5',
@@ -37,7 +37,7 @@ var friendsList = [
 	},
 	{
 		name: 'Kaminari Denki',
-		photo: '../public/img/',
+		photo: '../public/img/holder.png',
 		scores: [
 			'5',
 			'1',
@@ -49,7 +49,7 @@ var friendsList = [
 	},
 	{
 		name: 'Kirishima Eijirou',
-		photo: '../public/img/',
+		photo: '../public/img/holder.png',
 		scores: [
 			'5',
 			'1',
@@ -61,7 +61,7 @@ var friendsList = [
 	},
 	{
 		name: 'Iida Tenya',
-		photo: '../public/img/',
+		photo: '../public/img/holder.png',
 		scores: [
 			'4',
 			'4',
@@ -73,7 +73,7 @@ var friendsList = [
 	},
 	{
 		name: 'Uraraka Ochako',
-		photo: '../public/img/',
+		photo: '../public/img/holder.png',
 		scores: [
 			'5',
 			'4',
@@ -85,7 +85,7 @@ var friendsList = [
 	},
 	{
 		name: 'Yaoyorozu Momo',
-		photo: '../public/img/',
+		photo: '../public/img/holder.png',
 		scores: [
 			'3',
 			'2',
@@ -97,7 +97,7 @@ var friendsList = [
 	},
 	{
 		name: 'Jirou Kyouka',
-		photo: '../public/img/',
+		photo: '../public/img/holder.png',
 		scores: [
 			'2',
 			'2',
@@ -109,7 +109,7 @@ var friendsList = [
 	},
 	{
 		name: 'Asui Tsuyu',
-		photo: '../public/img/',
+		photo: '../public/img/holder.png',
 		scores: [
 			'3',
 			'3',
