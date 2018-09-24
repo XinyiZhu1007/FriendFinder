@@ -1,0 +1,83 @@
+body{
+    background: url('/public/img/friend-bg.png');
+    background-size: cover;
+    text-align: center;
+    
+}
+
+/* for all pages */
+
+h2,h4{
+    color: rgb(87, 22, 22);
+}
+
+p{
+    color: rgb(158, 69, 69);
+}
+
+h5{
+    color: rgb(173, 165, 165);
+    background-color: rgba(77, 23, 23, 0.8);
+    padding: 1.5%;
+}
+
+
+.container{
+    background-color: rgba(255, 255, 255, 0.56);
+    margin: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 80%;
+    text-align: center
+}
+
+/* home page */
+
+.bar{
+    margin: 2%;
+    padding-right: 10%;   
+}
+
+.bar a{
+    margin-top:2%;
+    color:grey;
+}
+
+.survey-link{
+    margin: auto;
+    padding-top: 3%;
+    padding-bottom: 6%;
+}
+
+.title{
+    margin: auto;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.text{
+    margin: auto;
+    padding-bottom: 3%;
+}
+
+/* survey page */
+
+.question{
+    padding-bottom: 3%;
+    text-align: center;
+}
+
+select{
+    margin: auto;
+    display: block;
+    width: 300px;
+}
+
+button{
+    color: rgb(173, 165, 165);
+    background-color: rgba(77, 23, 23, 0.8);
+    margin-top: 3%;
+    padding: 1.5%;
+    width: 100%;
+    border: none;
+}
